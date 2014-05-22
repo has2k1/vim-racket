@@ -32,7 +32,7 @@ syn keyword racketSyntax lambda case-lambda let let* letrec
 syn keyword racketSyntax let-values let*-values let-syntax letrec-syntax
 syn keyword racketSyntax let-syntaxes letrec-syntaxes letrec-syntaxes+values
 syn keyword racketSyntax local shared
-syn keyword racketSyntax if cond and or case define
+syn keyword racketSyntax if cond else and or case define
 syn keyword racketSyntax define define-values define-syntax define-syntaxes
 syn keyword racketSyntax define-for-syntax define-require-syntax define-provide-syntax
 syn keyword racketSyntax define-syntax-rule
@@ -510,6 +510,7 @@ syn region racketQuoted matchgroup=Delimiter start="#['`]("rs=s+3 matchgroup=Del
 
 " Comments
 syn match racketComment /;.*$/ contains=@Spell
+syn match racketComment /#;/
 syn region racketMultilineComment start=/#|/ end=/|#/ contains=racketMultilineComment,@Spell
 
 syn cluster racketNormal  add=racketQuoted,racketComment,racketMultilineComment
